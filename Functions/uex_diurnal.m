@@ -23,16 +23,15 @@ g = 9.81; % m/s^2
 kappavc = 0.4;
 
 % Thermal expansion coefficient
-alphaT = 1.8*10^-4; %/degC  % value for 17 degC
+alphaT = 1.7*10^-4; %/degC
 % Could place a seawater toolbox function here with temperature as input
 % to get a more exact answer
 
 %Specific heat of seawater
-Cp = 4006; % (J/(kg K))
+Cp = 4020; % (J/(kg K))
 % Could use a temperature dependent function
 
 Tday = 24*3600; % seconds in a day
-
 
 uex = (2/3)*g*alphaT*Tday/(rhow*pi*Cp*kappavc*ustartotal)*bslope*Qmag;
 

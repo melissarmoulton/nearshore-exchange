@@ -226,7 +226,7 @@ uex_IW = [.00062 .00282 .00327 .00579]; % IW exchange velocities (m/s)
 
 %% Diurnal heating and cooling
 
-Qmag_Case2 = 850/2; % W/m^2, difference between max heating/cooling
+Qmag_Case2 = 650; % W/m^2, peak, or half difference between max heating/cooling
 
 % Write script for diurnal code
 uex_diurnal_Case2 = uex_diurnal(ustar_Case2, Qmag_Case2, bslope, rhow);
@@ -310,7 +310,7 @@ plot(wave_Case2.h(1:iSt2),0*uex_Stokes_Case2(1:iSt2),'-','LineWidth',2,'Color',[
 plot(wave_Case2.h(1:iSt1),uex_Stokes_Case2(1:iSt1),'-','LineWidth',3,'Color',[1 1 1]*.5);
 
 % Diurnal heating and cooling
-plot([0 7],0.025*[1 1],'LineWidth',5,'Color',[1 .85 0])
+plot([0 7],uex_diurnal_Case2*[1 1],'LineWidth',5,'Color',[1 .85 0])
 plot([7 10],0.025*[1 0],':','LineWidth',3,'Color',[1 .85 0])
 plot([10 80],[0 0]+.0005,'LineWidth',4.5,'Color',[1 .85 0])
 
